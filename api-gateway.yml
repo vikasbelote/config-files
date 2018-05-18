@@ -1,0 +1,28 @@
+spring:
+  resources:
+    static-locations:
+    - file:///D:/repository/web-resources/web-resources/
+
+server:
+  port: 8080
+  
+#eureka:         #tells about the Eureka server details and its refresh time
+#  instance:
+#    leaseRenewalIntervalInSeconds: 1
+#    leaseExpirationDurationInSeconds: 2
+#    hostname: localhost
+#  client:
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+      
+security:
+  oauth2:
+    client:
+      clientId: SampleClientId
+      clientSecret: bhaskar
+      accessTokenUri: http://localhost:8081/identity-service/oauth/token
+      userAuthorizationUri: http://localhost:8081/identity-service/oauth/authorize
+    resource:
+      userInfoUri: http://localhost:8081/identity-service/user/me
+   
