@@ -1,0 +1,30 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql : true
+  datasource:
+    username: root
+    password: Bat@123456
+    url: jdbc:mysql://localhost:3306/suntan
+  resources:
+    static-locations:
+    - file:///D:/repository/web-resources/web-resources/
+
+eureka:         #tells about the Eureka server details and its refresh time
+ instance:
+   leaseRenewalIntervalInSeconds: 1
+   leaseExpirationDurationInSeconds: 2
+   hostname: localhost
+ client:
+   serviceUrl:
+     defaultZone: http://${eureka.instance.hostname}:8761/eureka/
